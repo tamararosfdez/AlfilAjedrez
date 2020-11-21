@@ -10,17 +10,17 @@ import org.junit.Test;
 public class PosicionTest {
 
 	private static final String CADENA_NO_ESPERADA = "La cadena devuelta no es la esperada.";
-	private static final String POSICION_NO_ESPERADA = "La posici√≥n copiada deber√≠a ser la misma que la pasada como par√°metro.";
+	private static final String POSICION_NO_ESPERADA = "La posiciÛn copiada deber· ser la misma que la pasada como par·metro.";
 	private static final String COLUMNA_NO_ESPERADA = "La columna devuelta no es la misma que la pasada al constructor.";
 	private static final String FILA_NO_ESPERADA = "La fila devuelta no es la misma que la pasada al constructor.";
-	private static final String OBJETO_DEBERIA_SER_NULL = "No se deber√≠a haber creado el objeto posici√≥n.";
-	private static final String ERROR_COLUMNA_NO_VALIDA = "ERROR: Columna no v√°lida.";
-	private static final String ERROR_FILA_NO_VALIDA = "ERROR: Fila no v√°lida.";
-	private static final String ERROR_COPIAR_POSICION_NULA = "ERROR: No es posible copiar una posici√≥n nula.";
-	private static final String EXCEPCION_COLUMNA_INCORRECTA = "Deber√≠a haber saltado una excepci√≥n indicando que la columna es incorrecta";
-	private static final String EXCEPCION_FILA_INCORRECTA = "Deber√≠a haber saltado una excepci√≥n indicando que la fila es incorrecta";
-	private static final String EXCEPCION_POSICION_NULA = "Deber√≠a haber saltado una excepci√≥n indicando que no se puede copiar una posici√≥n nula.";
-	private static final String EXCEPCION_NO_CORRECTA = "El mensaje devuelto por la excepci√≥n no es correcto.";
+	private static final String OBJETO_DEBERIA_SER_NULL = "No se deber· haber creado el objeto posiciÛn.";
+	private static final String ERROR_COLUMNA_NO_VALIDA = "ERROR: Columna no v·lida.";
+	private static final String ERROR_FILA_NO_VALIDA = "ERROR: Fila no v·lida.";
+	private static final String ERROR_COPIAR_POSICION_NULA = "ERROR: No es posible copiar una posiciÛn nula.";
+	private static final String EXCEPCION_COLUMNA_INCORRECTA = "Deber· haber saltado una excepciÛn indicando que la columna es incorrecta";
+	private static final String EXCEPCION_FILA_INCORRECTA = "Deber· haber saltado una excepciÛn indicando que la fila es incorrecta";
+	private static final String EXCEPCION_POSICION_NULA = "Deber· haber saltado una excepciÛn indicando que no se puede copiar una posiciÛn nula.";
+	private static final String EXCEPCION_NO_CORRECTA = "El mensaje devuelto por la excepciÛn no es correcto.";
 
 	@Test
 	public void constructorFilaValidaColumnaValidaCreaPosicionCorrectamente() {
