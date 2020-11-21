@@ -1,5 +1,5 @@
 # Tarea Alfil Ajedrez
-## Profesor: José Ramón Jiménez Reyes
+## Profesor: Jose Ram�n Jimenez Reyes
 ## Alumno: Tamara Rosa Fern�ndez
 
 La tarea va a consistir en modelar el movimiento de un peón de ajedrez por el tablero de dicho juego.
