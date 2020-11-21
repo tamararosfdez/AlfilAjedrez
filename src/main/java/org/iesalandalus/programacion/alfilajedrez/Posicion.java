@@ -36,6 +36,9 @@ public class Posicion {
 
 	}
 	public Posicion(Posicion posicion){
+		if (posicion == null) {
+			throw new NullPointerException("ERROR: No es posible copiar una posición nula.");
+		}
 		fila = posicion.getFila();
 		columna = posicion.getColumna();
 }
@@ -52,6 +55,7 @@ public class Posicion {
 		Posicion other = (Posicion) obj;
 		return fila == other.fila && columna == other.columna;
 	}
+	
 	public String toString() {
 		return String.format("fila=%s, columna=%s", fila, columna);
 	}
