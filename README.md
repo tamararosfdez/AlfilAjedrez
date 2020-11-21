@@ -2,7 +2,7 @@
 ## Profesor: Jose RamÛn Jimenez Reyes
 ## Alumno: Tamara Rosa Fern·ndez
 
-La tarea va a consistir en modelar el movimiento de un pe√≥n de ajedrez por el tablero de dicho juego.
+La tarea va a consistir en modelar el movimiento de un peÛn de ajedrez por el tablero de dicho juego.
 <div align="center">
 <p>
 <img alt="Colocaci√≥n inicial de los alfiles" src="src/main/resources/posicionInicialAlfiles.png" />
@@ -11,37 +11,37 @@ La tarea va a consistir en modelar el movimiento de un pe√≥n de ajedrez por el t
 <p style="text-size: xx-small">Im√°genes obtenidas de la web: <a href="https://www.123ajedrez.com/reglas-basicas/el-alfil">123ajedrez.com</a> (Enrique Moreno)</p>
 </div>
 
-En la primera imagen puedes observar cu√°l es el posicionamiento inicial v√°lido para los alfiles dependiendo de su color.
+En la primera imagen puedes observar cu·l es el posicionamiento inicial v·lido para los alfiles dependiendo de su color.
 
-En la segunda imagen puedes apreciar cu√°les son los movimientos v√°lidos para un alfil. 
+En la segunda imagen puedes apreciar cu·les son los movimientos v·lidos para un alfil. 
 
-Como se puede observar, dado un color, un alfil ocupa la casilla blanca y otro la negra. Dado que el movimiento de un alfil es siempre en diagonal, el alfil que ocupa la casilla inicial blanca s√≥lo se mueve por casillas blancas y el alfil que ocupa la casilla inicial negra s√≥lo se mueve por casillas negras.
+Como se puede observar, dado un color, un alfil ocupa la casilla blanca y otro la negra. Dado que el movimiento de un alfil es siempre en diagonal, el alfil que ocupa la casilla inicial blanca sÛlo se mueve por casillas blancas y el alfil que ocupa la casilla inicial negra sÛlo se mueve por casillas negras.
 
 En este repositorio hay un esqueleto de proyecto gradle que ya lleva incluidos todos los test necesarios que el programa debe pasar.
 
-Para ello te pongo un diagrama de clases para el mismo y poco a poco te ir√© explicando los diferentes pasos a seguir:
+Para ello te pongo un diagrama de clases para el mismo y poco a poco te irÈ explicando los diferentes pasos a seguir:
 <div align="center"><img alt="Diagrama de clases para alfil de ajedrez" src="src/main/resources/alfil.png" />
 </div>
 
 1. Lo primero que debes hacer es un `fork` del repositorio donde he colocado el esqueleto de este proyecto.
-2. Clona tu repositorio remoto reci√©n copiado en GitHub a un repositorio local que ser√° donde ir√°s realizando lo que a continuaci√≥n se te pide. Modifica el archivo `README.md` para que incluya tu nombre en el apartado "Alumno". Realiza tu primer commit.
+2. Clona tu repositorio remoto reciÈn copiado en GitHub a un repositorio local que ser· donde ir·s realizando lo que a continuaciÛn se te pide. Modifica el archivo `README.md` para que incluya tu nombre en el apartado "Alumno". Realiza tu primer commit.
 3. Crea un enumerado llamado `Color`, dentro del paquete adecuado, que contenga los valores: `BLANCO` y `NEGRO`. Realiza un commit.
 4. Crea un enumerado llamado `Direccion`, dentro del paquete adecuado, que contenga los valores: `ARRIBA_DERECHA`, `ABAJO_DERECHA`, `ABAJO_IZQUIERDA` y `ARRIBA_IZQUIERDA`.  Realiza un commit.
 5. Crea la clase `Posicion`. Crea los atributos `fila` (int) y `columna` (char) con la visibilidad adecuada. Realiza un commit.
-6. Crea los m√©todos `get` y `set` para los atributos. Recuerda que para el m√©todo `set` se debe tener en cuenta que los valores son correctos (las filas van del 1 al 8 -ambos inclusive- y las columnas de la 'a' a la 'h' -ambas inclusive-)  y si no se lance una excepci√≥n del tipo `IllegalArgumentException` con el mensaje adecuado y no modifique los atributos. Realiza un commit.
-7. Crea un constructor para esta clase que acepte como par√°metros la fila y la columna y que los asigne a los atributos si son correctos  y si no lance una excepci√≥n del mismo tipo que la anterior indicando el problema. Para ello utiliza los m√©todos `set` anteriormente creados. Realiza un commit.
+6. Crea los mÈtodos `get` y `set` para los atributos. Recuerda que para el mÈtodo `set` se debe tener en cuenta que los valores son correctos (las filas van del 1 al 8 -ambos inclusive- y las columnas de la 'a' a la 'h' -ambas inclusive-)  y si no se lance una excepciÛn del tipo `IllegalArgumentException` con el mensaje adecuado y no modifique los atributos. Realiza un commit.
+7. Crea un constructor para esta clase que acepte como par·metros la fila y la columna y que los asigne a los atributos si son correctos  y si no lance una excepciÛn del mismo tipo que la anterior indicando el problema. Para ello utiliza los mÈtodos `set` anteriormente creados. Realiza un commit.
 8. Crea el constructor copia para esta clase. Realiza un commit.
-9. Crea los m√©todos `equals` y `hashCode` para esta clase. Realiza un commit.
-10. Crea el m√©todo `toString` que devolver√° un `String` y ser√° la representaci√≥n de la fila y la columna. Realiza un commit.
-11. Crea la clase `Alfil`, dentro del paquete adecuado, cuyos atributos ser√°n un `color` (del tipo enumerado `Color`) y posicion (de la clase `Posicion`), con la visibilidad adecuada. Realiza un commit.
-12. Crea los m√©todos `get` y `set` para cada atributo con la visibilidad adecuada. Estos m√©todos siempre comprobar√°n la validez de los par√°metros pasados y si no son correctos deber√° lanzar la excepci√≥n adecuada (`NullPointerException` o `IllegalArgumentException`) con el mensaje adecuado. Realiza un commit.
-13. Crea un constructor por defecto para esta clase que cree un alfil negro en la posici√≥n '8f'. Realiza un commit.
-14. Crea un constructor para la clase que acepte como par√°metro el color y que crear√° un alfil de dicho color cuya posici√≥n ser√° '1f' si es blanco o '8f' si es negro. Realiza un commit.
-15. Crea un constructor para la clase que acepte como par√°metros el color y la columna inicial. La columna inicial debe ser v√°lida (de lo contrario debe lanzar la excepci√≥n `IllegalArgumentException` con un mensaje adecuado) y creara un alfil del color dado y colocado en dicha columna ('c' o 'f') y cuya fila ser√° la 1 si es blanco y la 8 si es negro. Realiza un commit.
-16. Crea el m√©todo `mover` que acepte como par√°metro una `Direccion` y la cantidad de `pasos` a mover en dicha direcci√≥n. Los pasos deben ser positivos y la direcci√≥n no puede ser nula o de lo contrario debe lanzar una excepci√≥n adecuada (`NullPointerException` o `IllegalArgumentException`) con el mensaje adecuado. Si no puede realizar dicho movimiento, debido a que el √°lfil se sale del tablero, debe lanzar una excepci√≥n del tipo `OperationNotSupportedException` con un mensaje adecuado y no modificar√° la posici√≥n del alfil. Realiza un commit.
-17. Crea los m√©todos `equals` y `hashCode` para esta clase. Realiza un commit.
-18. Crea el m√©todo `toString` que devuelva un `String` que ser√° la representaci√≥n de dicho objeto (color y posici√≥n). Realiza un commit.
-19. Crea los diferentes m√©todos que se indican en el diagrama de clases para permitir que el m√©todo `main` nos muestre un men√∫ que nos permitir√° crear un alfil por defecto, crear un alfil de un color, crear un alfil de un color en una columna inicial dada ('c' o 'f'), mover el pe√≥n y salir. Despu√©s de cada operaci√≥n se nos mostrar√° el estado actual de nuestro alfil. El men√∫ se repetir√° mientras no elijamos la opci√≥n salir. En todo caso se debe validar que todas las entradas al programa son correctas. Para ello implementa los siguientes m√©todos:
+9. Crea los mÈtodos `equals` y `hashCode` para esta clase. Realiza un commit.
+10. Crea el mÈtodo `toString` que devolver· un `String` y ser· la representaciÛn de la fila y la columna. Realiza un commit.
+11. Crea la clase `Alfil`, dentro del paquete adecuado, cuyos atributos ser·n un `color` (del tipo enumerado `Color`) y posicion (de la clase `Posicion`), con la visibilidad adecuada. Realiza un commit.
+12. Crea los mÈtodos `get` y `set` para cada atributo con la visibilidad adecuada. Estos mÈtodos siempre comprobar la validez de los par·metros pasados y si no son correctos deber· lanzar la excepciÛn adecuada (`NullPointerException` o `IllegalArgumentException`) con el mensaje adecuado. Realiza un commit.
+13. Crea un constructor por defecto para esta clase que cree un alfil negro en la posiciÛn '8f'. Realiza un commit.
+14. Crea un constructor para la clase que acepte como par·metro el color y que crear· un alfil de dicho color cuya posiciÛn ser· '1f' si es blanco o '8f' si es negro. Realiza un commit.
+15. Crea un constructor para la clase que acepte como par·metros el color y la columna inicial. La columna inicial debe ser v·lida (de lo contrario debe lanzar la excepciÛn `IllegalArgumentException` con un mensaje adecuado) y creara un alfil del color dado y colocado en dicha columna ('c' o 'f') y cuya fila ser· la 1 si es blanco y la 8 si es negro. Realiza un commit.
+16. Crea el mÈtodo `mover` que acepte como par·metro una `Direccion` y la cantidad de `pasos` a mover en dicha direcciÛn. Los pasos deben ser positivos y la direcciÛn no puede ser nula o de lo contrario debe lanzar una excepciÛn adecuada (`NullPointerException` o `IllegalArgumentException`) con el mensaje adecuado. Si no puede realizar dicho movimiento, debido a que el ¡lfil se sale del tablero, debe lanzar una excepciÛn del tipo `OperationNotSupportedException` con un mensaje adecuado y no modificar la posiciÛn del alfil. Realiza un commit.
+17. Crea los mÈtodos `equals` y `hashCode` para esta clase. Realiza un commit.
+18. Crea el mÈtodo `toString` que devuelva un `String` que ser· la representaciÛn de dicho objeto (color y posiciÛn). Realiza un commit.
+19. Crea los diferentes mÈtodos que se indican en el diagrama de clases para permitir que el metodo `main` nos muestre un men√∫ que nos permitir√° crear un alfil por defecto, crear un alfil de un color, crear un alfil de un color en una columna inicial dada ('c' o 'f'), mover el pe√≥n y salir. Despu√©s de cada operaci√≥n se nos mostrar√° el estado actual de nuestro alfil. El men√∫ se repetir√° mientras no elijamos la opci√≥n salir. En todo caso se debe validar que todas las entradas al programa son correctas. Para ello implementa los siguientes m√©todos:
     1. `void mostrarAlfil()`: mostrar√° por consola la representaci√≥n del alfil representado por el atributo de clase `alfil` (crea el atributo si a√∫n no lo has hecho). Realiza un commit.
     2. `void mostrarMenu()`: mostrar√° por consola el men√∫ con las diferentes opciones de nuestro programa. Realiza un commit.
     3. `int elegirOpci√≥n()`: Nos mostrar√° un mensaje para que elijamos una opci√≥n del men√∫ anteriormente creado y nos pedir√° que introduzcamos por teclado la opci√≥n hasta que √©sta sea valida. Devolver√° la opci√≥n elegida. Realiza un commit.
