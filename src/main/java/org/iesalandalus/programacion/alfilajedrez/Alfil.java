@@ -38,14 +38,12 @@ public class Alfil {
 	}
 
 	public void setPosicion(Posicion posicion) {
+		
 		this.posicion = posicion;
 	}
 	
 	public Alfil (Color color, char columnaInicial) {
 		setColor(color);
-		if (columnaInicial != 'c' || columnaInicial != 'f') {
-			throw new IllegalArgumentException("ERROR: Columna no válida.");
-		}
 		if (color == Color.NEGRO) {
 			posicion = new Posicion (8, columnaInicial);
 		}
