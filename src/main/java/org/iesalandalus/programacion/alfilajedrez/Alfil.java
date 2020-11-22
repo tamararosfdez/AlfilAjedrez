@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.alfilajedrez;
 
+import java.util.Objects;
+
 public class Alfil {
 
 	private Color color;
@@ -10,9 +12,10 @@ public class Alfil {
 	public Alfil(Color color, Posicion posicion) {
 		super();
 		this.color = color;
-		this.posicion = posicion;
+		this.posicion = new Posicion (posicion);
 	}
 
+	
 
 	public Color getColor() {
 		return color;
@@ -20,6 +23,9 @@ public class Alfil {
 
 
 	public void setColor(Color color) {
+		if (color == null) {
+			throw new NullPointerException("ERROR: No se puede asignar un color nulo.");
+		}
 		this.color = color;
 	}
 
@@ -29,8 +35,32 @@ public class Alfil {
 	}
 
 
-	public void setPosicion(Posicion posicion) {
-		this.posicion = posicion;
+	public void setPosicion(Posicion posicion, int fila, char columna) {
+		if (posicion == null) {
+			throw new NullPointerException("ERROR: No es posible copiar una posición nula.");
+		}
+		fila = posicion.getFila();
+		columna = posicion.getColumna();
 	}
+
+
+	public int hashCode() {
+		return Objects.hash(color, posicion);
+	}
+
+
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!(obj instanceof Alfil)) {
+			return false;
+		}
+		Alfil other = (Alfil) obj;
+		return color == other.color && posicion == other.posicion;
+
+	}
+	
+	
 	
 }
