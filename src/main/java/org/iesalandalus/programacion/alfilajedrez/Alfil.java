@@ -7,12 +7,15 @@ public class Alfil {
 	private Color color;
 	private Posicion posicion;
 	
+	public Alfil () {}
 	
-	
-	public Alfil(Color color, Posicion posicion) {
-		super();
+	public Alfil(Color color) {
 		this.color = color;
-		this.posicion = new Posicion (posicion);
+	}
+	
+	public Alfil (Color color, Posicion posicion) {
+		this.color = color;
+		this.posicion = posicion;
 	}
 
 	
@@ -66,3 +69,4 @@ public class Alfil {
 	}
 	
 }
+ 
