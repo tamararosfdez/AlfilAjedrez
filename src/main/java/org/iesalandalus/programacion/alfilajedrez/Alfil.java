@@ -2,8 +2,11 @@ package org.iesalandalus.programacion.alfilajedrez;
 
 import java.util.Objects;
 
+import javax.naming.OperationNotSupportedException;
+
 public class Alfil {
 
+	private static final String ERROR_MOVIMIENTO = null;
 	private Color color;
 	private Posicion posicion;
 	
@@ -44,6 +47,9 @@ public class Alfil {
 	
 	public Alfil (Color color, char columnaInicial) {
 		setColor(color);
+		if (columnaInicial != 'c' || columnaInicial != 'f') {
+			throw new IllegalArgumentException("ERROR: Columna no válida.");
+		}
 		if (color == Color.NEGRO) {
 			posicion = new Posicion (8, columnaInicial);
 		}
@@ -51,7 +57,45 @@ public class Alfil {
 			posicion = new Posicion (1, columnaInicial);
 		}
 	}
-
+	
+	public void mover(Direccion direccion, int pasos) throws OperationNotSupportedException {
+		if (direccion == null) {
+			throw new IllegalArgumentException("La dirección no puede ser nula.");
+		}
+		if (pasos <= 0) {
+			throw new IllegalArgumentException("ERROR: El número de pasos debe ser positivo.");
+		}
+		switch (direccion) {
+		case ARRIBA_DERECHA:
+			try {
+				posicion.setFila(posicion.getColumna() + pasos);
+			} catch (IllegalArgumentException e) {
+				throw new OperationNotSupportedException(ERROR_MOVIMIENTO + e.getMessage());
+			}
+			break;
+		case ABAJO_DERECHA:
+			try {
+				posicion.setFila(posicion.getColumna() + pasos);
+			} catch (IllegalArgumentException e) {
+				throw new OperationNotSupportedException(ERROR_MOVIMIENTO + e.getMessage());
+			}
+			break;
+		case ABAJO_IZQUIERDA:
+			try {
+				posicion.setFila(posicion.getColumna() + pasos);
+			} catch (IllegalArgumentException e) {
+				throw new OperationNotSupportedException(ERROR_MOVIMIENTO + e.getMessage());
+			}
+			break;
+		case ARRIBA_IZQUIERDA:
+			try {
+				posicion.setFila(posicion.getColumna() + pasos);
+			} catch (IllegalArgumentException e) {
+				throw new OperationNotSupportedException(ERROR_MOVIMIENTO + e.getMessage());
+			}
+			break;
+}
+	}
 	public int hashCode() {
 		return Objects.hash(color, posicion);
 	}
