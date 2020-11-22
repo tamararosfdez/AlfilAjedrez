@@ -61,6 +61,8 @@ public class Alfil {
 
 	}
 	
-	
+	public String toString() {
+		return String.format("color=%s, posicion=%s", color, posicion);
+	}
 	
 }
