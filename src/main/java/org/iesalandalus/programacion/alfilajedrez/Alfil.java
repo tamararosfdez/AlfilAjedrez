@@ -37,15 +37,22 @@ public class Alfil {
 		return posicion;
 	}
 
-
-	public void setPosicion(Posicion posicion, int fila, char columna) {
-		if (posicion == null) {
-			throw new NullPointerException("ERROR: No es posible copiar una posición nula.");
-		}
-		fila = posicion.getFila();
-		columna = posicion.getColumna();
+	public void setPosicion(Posicion posicion) {
+		this.posicion = posicion;
 	}
-
+	
+	public Alfil (Color color, char columnaInicial) {
+		setColor(color);
+		if (columnaInicial != 'c' || columnaInicial != 'f') {
+			throw new IllegalArgumentException("ERROR: Columna no válida.");
+		}
+		if (color == Color.NEGRO) {
+			posicion = new Posicion (8, columnaInicial);
+		}
+		else if (color == Color.BLANCO) {
+			posicion = new Posicion (1, columnaInicial);
+		}
+	}
 
 	public int hashCode() {
 		return Objects.hash(color, posicion);
